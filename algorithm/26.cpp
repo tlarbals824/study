@@ -8,6 +8,4 @@ int main(){
 	printf("HEllo");
 	printf("HEllo");
 	printf("HEllo");
-	printf("HEllo");
-	printf("HEllo");
 }
