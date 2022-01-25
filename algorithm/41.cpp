@@ -18,7 +18,7 @@ int main(){
 			for(int i=0;i<count;i++){
 				printf("%d ",i+1+(num-sum)/count);
 				if(i==count-1) printf("= %d\n",num);
-				else printf("+");
+				else printf("+ ");
 			}
 		}
 		count++;
