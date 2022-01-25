@@ -17,7 +17,7 @@ int main(){
 	int res[n+m];
 	int count=0;
 	int i,j;
-	for(i=0,j=0;i<n||j<m;){
+	for(i=0,j=0;i<n&&j<m;){
 		if(nNum[i]<mNum[j]){
 			res[count++]=nNum[i++];
 		}else{
