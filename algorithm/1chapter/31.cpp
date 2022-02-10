@@ -25,5 +25,4 @@ int main(){
 	if(hCount==0) hCount=1;
 	sum=cCount*12+hCount;
 	printf("%d\n",sum);
-	
 }
