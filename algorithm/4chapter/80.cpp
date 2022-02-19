@@ -37,6 +37,7 @@ int main(){
 	while(!q.empty()){
 		Dijkstra tmp=q.top();
 		q.pop();
+		if(tmp.size>vertex[tmp.vtx]) continue;
 		for(int i=0;i<map[tmp.vtx].size();i++){
 			if(vertex[map[tmp.vtx][i].first]>map[tmp.vtx][i].second+tmp.size){
 				vertex[map[tmp.vtx][i].first]=map[tmp.vtx][i].second+tmp.size;
@@ -51,23 +52,3 @@ int main(){
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
