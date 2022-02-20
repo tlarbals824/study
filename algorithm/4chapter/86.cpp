@@ -43,7 +43,6 @@ void dfs(int x,int s){
 			}
 		}
 	}
-	
 }
 
 
