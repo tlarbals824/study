@@ -79,8 +79,6 @@ int main(){
 			ch[xx][yy]=1;
 		}
 	}
-		
 	printf("%d\n",res);
-		
 }
 
