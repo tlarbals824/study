@@ -2,49 +2,52 @@
 
 using namespace std;
 
+int n,m;
+int button[10]={0};
+
+bool check(int num){
+	if(num==0){
+		for(int i=0;i<m;i++){
+			if(0==button[i])
+				return false;
+		}
+	}
+	int tmp=num;
+	while(tmp>0){
+		for(int i=0;i<m;i++){
+			if(tmp%10==button[i])
+				return false;
+		}
+		tmp=tmp/10;
+	}
+	return true;
+}
+int cnt(int num){
+	if(num==0) return 1;
+	int tmp=num;
+	int cnt=0;
+	while(tmp>0){
+		cnt++;
+		tmp=tmp/10;
+	}
+	return cnt;
+}
+
 int main(){
 	ios_base::sync_with_stdio(false);
 	
-	int n;
-	int m;
-	cin>>n>>m;
-	int unable[m];
+	cin>>n;
+	cin>>m;
+	
 	for(int i=0;i<m;i++)
-		cin>>unable[i];
+		cin>>button[i];
 	
-	int Min=100;
-	
-	for(int i=0;i<n;i++){
-		int tmp[2]={n+i,n-i};
-		for(int i=0;i<2;i++){
-			
-			int tmp1=tmp[i];
-			if(tmp1<0) continue;
-			
-			bool flag=false;
-			while(tmp1>0){
-				int a=tmp1%10;
-				for(int i=0;i<m;i++)
-					if(a==unable[i]) flag=true;
-				if(flag) break;
-				else tmp1=tmp1/10;
-			}
-			if(!flag){
-				if(abs(tmp[i]-n)<abs(Min-n))
-					Min=tmp[i];
-			}
+	int Min=abs(100-n);
+	for(int i=0;i<=10000000;i++){
+		if(check(i)){
+			Min=min(Min,abs(n-i)+cnt(i));
 		}
 	}
-	int tmp1=Min;
+	
 	cout<<Min<<endl;
-	int cnt=0;
-	while(tmp1>0){
-		cnt++;
-		tmp1=tmp1/10;
-	}
-	int res;
-	if(Min==100)
-		res=abs(Min-n);
-	else res=cnt+abs(Min-n);
-	cout<<res<<endl;
 }
