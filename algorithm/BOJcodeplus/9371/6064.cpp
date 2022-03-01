@@ -29,4 +29,4 @@ int main(){
 	for(int i=0;i<t;i++){
 		cout<<stk[i]<<endl;
 	}
-}
+} v                           
