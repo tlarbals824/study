@@ -35,11 +35,12 @@ int main(){
 	int n,res=0;
 	scanf("%d",&n);
 	int map[n+1][n+1];
-	int ch[n+1][n+1]={0};
+	int ch[n+1][n+1];
 	Simba simba;
 	for(int i=1;i<=n;i++){
 		for(int j=1;j<=n;j++){
 			scanf("%d",&map[i][j]);
+			ch[i][j]=0;
 			if(map[i][j]==9){
 				simba.x=i;
 				simba.y=j;
